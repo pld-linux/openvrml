@@ -23,28 +23,28 @@ Group:		System Environment/Libraries
 Source0:	http://dl.sourceforge.net/openvrml/%{name}-%{version}.tar.gz
 # Source0-md5:	4d4a68af69c380cf4af22247c3a53215
 URL:		http://www.openvrml.org/
-BuildRequires:	pkgconfig >= 0.12.0
-BuildRequires:	boost-devel >= 1.30.2
+BuildRequires:	SDL-devel >= 1.2
+BuildRequires:	X11-devel >= 6.7
 BuildRequires:	boost-conversion-devel >= 1.30.2
+BuildRequires:	boost-devel >= 1.30.2
 BuildRequires:	boost-spirit-devel >= 1.30.2
-BuildRequires:	zlib-devel >= 1.1.3
-BuildRequires:	libpng-devel >= 1.0.12
-BuildRequires:	libjpeg-devel >= 6b
+BuildRequires:	dejagnu >= 1.4
 BuildRequires:	fontconfig-devel >= 2.0
 BuildRequires:	freetype-devel >= 2.1.2
-BuildRequires:	mozilla-devel >= 1.6
-BuildRequires:	libgcj-devel >= 3.3
-BuildRequires:	X11-devel >= 6.7
-BuildRequires:	SDL-devel >= 1.2
-BuildRequires:	dejagnu >= 1.4
 BuildRequires:	gtk+2-devel
-Requires:	zlib >= 1.1.3
-Requires:	libpng >= 1.0.12
-Requires:	libjpeg >= 6b
+BuildRequires:	libgcj-devel >= 3.3
+BuildRequires:	libjpeg-devel >= 6b
+BuildRequires:	libpng-devel >= 1.0.12
+BuildRequires:	mozilla-devel >= 1.6
+BuildRequires:	pkgconfig >= 0.12.0
+BuildRequires:	zlib-devel >= 1.1.3
 Requires:	fontconfig >= 2.0
 Requires:	freetype >= 2.1.2
-Requires:	mozilla >= 1.6
 Requires:	libgcj >= 3.3
+Requires:	libjpeg >= 6b
+Requires:	libpng >= 1.0.12
+Requires:	mozilla >= 1.6
+Requires:	zlib >= 1.1.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
