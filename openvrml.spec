@@ -18,8 +18,7 @@ Name:		openvrml
 Version:	0.15.5
 Release:	0.1
 License:	LGPL
-Group:		System Environment/Libraries
-######		Unknown group!
+Group:		X11/Libraries
 Source0:	http://dl.sourceforge.net/openvrml/%{name}-%{version}.tar.gz
 # Source0-md5:	4d4a68af69c380cf4af22247c3a53215
 URL:		http://www.openvrml.org/
@@ -64,8 +63,7 @@ programs using OpenVRML.
 
 %package gl
 Summary:	OpenGL renderer for OpenVRML
-Group:		System Environment/Libraries
-######		Unknown group!
+Group:		X11/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	xorg-x11-Mesa-libGLU >= 6.7
 
