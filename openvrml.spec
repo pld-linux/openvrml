@@ -4,7 +4,7 @@
 Summary:	VRML97 runtime library.
 Name:		openvrml
 Version:	0.15.5
-Release:	0.2
+Release:	0.5
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://dl.sourceforge.net/openvrml/%{name}-%{version}.tar.gz
@@ -52,7 +52,7 @@ programs using OpenVRML.
 Summary:	OpenGL renderer for OpenVRML
 Group:		X11/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	xorg-x11-Mesa-libGLU >= 6.7
+Requires:	X11-OpenGL-libs >= 1:6.7
 
 %description gl
 OpenGL renderer for OpenVRML.
@@ -61,7 +61,7 @@ OpenGL renderer for OpenVRML.
 Summary:	OpenVRML OpenGL renderer headers and static library.
 Group:		Development/Libraries
 Requires:	%{name}-gl = %{version}-%{release}
-Requires:	xorg-x11-devel >= 6.7
+Requires:	X11-devel >= 1:6.7.0
 
 %description gl-devel
 Headers and static library that programmers will need to develop C++
@@ -138,19 +138,21 @@ Wtyczka VRML dla przegl±darki Konqueror.
 	XPIDLFLAGS="-I %{_datadir}/idl" \
 	mozincludedir=%{_includedir}/mozilla
 
-#pkg-config --variable=includedir mozilla-plugin
-
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_libdir}/{mozilla{,-firefox},netscape,kde3}/{plugins/konqueror,java/classes}
+install -d $RPM_BUILD_ROOT%{_libdir}/{mozilla{,-firefox},netscape,kde3}/plugins/konqueror
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-# copy to mozilla-firefox dir
+# mozilla-firefox
 install $RPM_BUILD_ROOT%{_libdir}/mozilla{/plugins/openvrml.{so,xpt},-firefox/plugins}
+# kde
+install $RPM_BUILD_ROOT%{_libdir}/{mozilla/plugins,kde3/plugins/konqueror}/openvrml.so
+# netscape
+install $RPM_BUILD_ROOT%{_libdir}/{mozilla,netscape}/plugins/openvrml.so
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -191,21 +193,19 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/mozilla/plugins/*.so
 %attr(755,root,root) %{_libdir}/mozilla/plugins/*.xpt
+# dunno
+%attr(755,root,root) %{_libdir}/openvrml-player
+%{_datadir}/idl/%{name}-%{version}/openvrml.idl
 
-%if 0
 %files -n netscape-plugin-%{name}
 %defattr(644,root,root,755)
-%{_libdir}/netscape/java/classes/*.jar
 %attr(755,root,root) %{_libdir}/netscape/plugins/*.so
-%endif
 
 %files -n mozilla-firefox-plugin-%{name}
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/mozilla-firefox/plugins/*.so
 %attr(755,root,root) %{_libdir}/mozilla-firefox/plugins/*.xpt
 
-%if 0
 %files -n konqueror-plugin-%{name}
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/kde3/plugins/konqueror/*.so
-%endif
