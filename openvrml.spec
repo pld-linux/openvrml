@@ -4,7 +4,7 @@
 Summary:	VRML97 runtime library.
 Name:		openvrml
 Version:	0.15.5
-Release:	0.1
+Release:	0.2
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://dl.sourceforge.net/openvrml/%{name}-%{version}.tar.gz
@@ -149,6 +149,9 @@ install -d $RPM_BUILD_ROOT%{_libdir}/{mozilla{,-firefox},netscape,kde3}/{plugins
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+# copy to mozilla-firefox dir
+install $RPM_BUILD_ROOT%{_libdir}/mozilla{/plugins/openvrml.{so,xpt},-firefox/plugins}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -187,17 +190,21 @@ rm -rf $RPM_BUILD_ROOT
 %files -n mozilla-plugin-%{name}
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/mozilla/plugins/*.so
+%attr(755,root,root) %{_libdir}/mozilla/plugins/*.xpt
 
 %if 0
 %files -n netscape-plugin-%{name}
 %defattr(644,root,root,755)
 %{_libdir}/netscape/java/classes/*.jar
 %attr(755,root,root) %{_libdir}/netscape/plugins/*.so
+%endif
 
 %files -n mozilla-firefox-plugin-%{name}
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/mozilla-firefox/plugins/*.so
+%attr(755,root,root) %{_libdir}/mozilla-firefox/plugins/*.xpt
 
+%if 0
 %files -n konqueror-plugin-%{name}
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/kde3/plugins/konqueror/*.so
