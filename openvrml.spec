@@ -158,7 +158,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS COPYING.LESSER ChangeLog NEWS README THANKS
-%{_libdir}/libopenvrml.so.*
+%attr(755,root,root) %{_libdir}/libopenvrml.so.*
 %{_datadir}/openvrml/java/script.jar
 
 %files devel
@@ -172,7 +172,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files gl
 %defattr(644,root,root,755)
-%{_libdir}/libopenvrml-gl.so.*
+%attr(755,root,root) %{_libdir}/libopenvrml-gl.so.*
 
 %files gl-devel
 %defattr(644,root,root,755)
