@@ -25,7 +25,6 @@ URL:		http://www.openvrml.org/
 BuildRequires:	SDL-devel >= 1.2
 BuildRequires:	X11-devel >= 6.7
 BuildRequires:	boost-conversion-devel >= 1.30.2
-BuildRequires:	boost-devel >= 1.30.2
 BuildRequires:	boost-spirit-devel >= 1.30.2
 BuildRequires:	dejagnu >= 1.4
 BuildRequires:	fontconfig-devel >= 2.0
@@ -34,7 +33,7 @@ BuildRequires:	gtk+2-devel
 BuildRequires:	libgcj-devel >= 3.3
 BuildRequires:	libjpeg-devel >= 6b
 BuildRequires:	libpng-devel >= 1.0.12
-BuildRequires:	mozilla-devel >= 1.6
+BuildRequires:	mozilla-devel >= 1.7.6-2.1
 BuildRequires:	pkgconfig >= 0.12.0
 BuildRequires:	zlib-devel >= 1.1.3
 Requires:	fontconfig >= 2.0
