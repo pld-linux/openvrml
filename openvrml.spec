@@ -1,6 +1,6 @@
 # TODO
 # - doesn't build with mozilla-1.8-0.a6.2, 1.7.6-2.2 is fine
-# - other than mozilla plugins
+# - includedir/openvrml/openvrml sees like a bug
 Summary:	VRML97 runtime library.
 Name:		openvrml
 Version:	0.15.5
