@@ -21,7 +21,7 @@ BuildRequires:	gtk+2-devel
 BuildRequires:	libgcj-devel >= 3.3
 BuildRequires:	libjpeg-devel >= 6b
 BuildRequires:	libpng-devel >= 1.0.12
-BuildRequires:	mozilla-devel >= 1.7.6-2.2
+BuildRequires:	mozilla-devel >= 5:1.7.6-2.2
 BuildRequires:	pkgconfig >= 0.12.0
 BuildRequires:	zlib-devel >= 1.1.3
 Requires:	fontconfig >= 2.0
@@ -29,7 +29,7 @@ Requires:	freetype >= 2.1.2
 Requires:	libgcj >= 3.3
 Requires:	libjpeg >= 6b
 Requires:	libpng >= 1.0.12
-Requires:	mozilla >= 1.6
+Requires:	mozilla >= 5:1.7.6
 Requires:	zlib >= 1.1.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
