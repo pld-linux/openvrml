@@ -1,18 +1,6 @@
-# TODO, need older mozilla than mozilla-1.8-0.a6.2?
-# ./xpcom/components/nsIServiceManagerUtils.h seems available from mozilla-1.7.6
-#openvrml.cpp:34:37: nsIServiceManagerUtils.h: No such file or
-#directory
-#openvrml.cpp:38:27: nsIDOMWindow.h: No such file or directory
-#openvrml.cpp: In function `NPError NP_Initialize(NPNetscapeFuncs*,
-#   NPPluginFuncs*)':
-#openvrml.cpp:215: error: `do_GetService' undeclared (first use this
-#function)
-#openvrml.cpp:215: error: (Each undeclared identifier is reported only
-#once for
-#   each function it appears in.)
-#make[2]: *** [openvrml.lo] Error 1
-#make[2]: Leaving directory
-#`/home/builder/rpm/BUILD/openvrml-0.15.5/mozilla-plugin/src'
+# TODO
+# - doesn't build with mozilla-1.8-0.a6.2, 1.7.6-2.2 is fine
+# - other than mozilla plugins
 Summary:	VRML97 runtime library.
 Name:		openvrml
 Version:	0.15.5
@@ -33,7 +21,7 @@ BuildRequires:	gtk+2-devel
 BuildRequires:	libgcj-devel >= 3.3
 BuildRequires:	libjpeg-devel >= 6b
 BuildRequires:	libpng-devel >= 1.0.12
-BuildRequires:	mozilla-devel >= 1.7.6-2.1
+BuildRequires:	mozilla-devel >= 1.7.6-2.2
 BuildRequires:	pkgconfig >= 0.12.0
 BuildRequires:	zlib-devel >= 1.1.3
 Requires:	fontconfig >= 2.0
@@ -142,26 +130,21 @@ Wtyczka VRML dla przegl±darki Konqueror.
 
 %prep
 %setup -q
-#%setup -q -n FreeWRL-%{version}
-#%patch0 -p1
-#%patch1 -p1
-# for mozilla plugin - removed intentionaly?
-#%patch2 -p1
-#%patch3 -p1
-#%patch4 -p1
 
 %build
 %configure \
 	CPPFLAGS="%{rpmcflags} %{!?debug:-DNDEBUG}" \
-	XPIDL=%{_bindir}/xpidl
-
-%{__make} \
+	XPIDL=%{_bindir}/xpidl \
 	XPIDLFLAGS="-I %{_datadir}/idl" \
 	mozincludedir=%{_includedir}/mozilla
 
+#pkg-config --variable=includedir mozilla-plugin
+
+%{__make}
+
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_libdir}/{mozilla{,-firefox},netscape,kde3}/{plugins/konqueror,java/classes} \
+install -d $RPM_BUILD_ROOT%{_libdir}/{mozilla{,-firefox},netscape,kde3}/{plugins/konqueror,java/classes}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
@@ -205,6 +188,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/mozilla/plugins/*.so
 
+%if 0
 %files -n netscape-plugin-%{name}
 %defattr(644,root,root,755)
 %{_libdir}/netscape/java/classes/*.jar
@@ -217,3 +201,4 @@ rm -rf $RPM_BUILD_ROOT
 %files -n konqueror-plugin-%{name}
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/kde3/plugins/konqueror/*.so
+%endif
