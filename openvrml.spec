@@ -161,11 +161,15 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS COPYING.LESSER ChangeLog NEWS README THANKS
 %attr(755,root,root) %{_libdir}/libopenvrml.so.*
+%dir %{_datadir}/openvrml
+%dir %{_datadir}/openvrml/java
 %{_datadir}/openvrml/java/script.jar
 
 %files devel
 %defattr(644,root,root,755)
 %doc doc/manual
+%dir %{_includedir}/%{name}
+%dir %{_includedir}/%{name}/openvrml
 %{_includedir}/%{name}/openvrml/*.h
 %{_libdir}/libopenvrml.la
 %{_libdir}/libopenvrml.a
