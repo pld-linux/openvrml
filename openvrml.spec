@@ -5,17 +5,18 @@
 Summary:	VRML97 runtime library
 Summary(pl):	Biblioteka uruchomieniowa VRML97
 Name:		openvrml
-Version:	0.15.5
+Version:	0.15.9
 Release:	0.5
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://dl.sourceforge.net/openvrml/%{name}-%{version}.tar.gz
-# Source0-md5:	4d4a68af69c380cf4af22247c3a53215
+# Source0-md5:	a4134d658685be71596c620169221e6f
 URL:		http://www.openvrml.org/
 BuildRequires:	SDL-devel >= 1.2
 BuildRequires:	X11-devel >= 1:6.7
 BuildRequires:	boost-conversion-devel >= 1.30.2
 BuildRequires:	boost-spirit-devel >= 1.30.2
+BuildRequires:	boost-test-devel >= 1.30.2
 BuildRequires:	dejagnu >= 1.4
 BuildRequires:	fontconfig-devel >= 2.0
 BuildRequires:	freetype-devel >= 2.1.2
@@ -219,9 +220,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS COPYING.LESSER ChangeLog NEWS README THANKS
 %attr(755,root,root) %{_libdir}/libopenvrml.so.*.*.*
-%dir %{_datadir}/openvrml
-%dir %{_datadir}/openvrml/java
-%{_datadir}/openvrml/java/script.jar
 
 %files devel
 %defattr(644,root,root,755)
