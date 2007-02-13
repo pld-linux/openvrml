@@ -3,7 +3,7 @@
 # - includedir/openvrml/openvrml sees like a bug
 # - -devel deps
 Summary:	VRML97 runtime library
-Summary(pl.UTF-8):   Biblioteka uruchomieniowa VRML97
+Summary(pl.UTF-8):	Biblioteka uruchomieniowa VRML97
 Name:		openvrml
 Version:	0.15.9
 Release:	0.5
@@ -51,7 +51,7 @@ VRML.
 
 %package devel
 Summary:	Headers for developing C++ programs with OpenVRML
-Summary(pl.UTF-8):   Pliki nagłówkowe do tworzenia programów w C++ z użyciem OpenVRML
+Summary(pl.UTF-8):	Pliki nagłówkowe do tworzenia programów w C++ z użyciem OpenVRML
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -65,7 +65,7 @@ przy użyciu OpenVRML.
 
 %package static
 Summary:	Static OpenVRML library
-Summary(pl.UTF-8):   Statyczna biblioteka OpenVRML
+Summary(pl.UTF-8):	Statyczna biblioteka OpenVRML
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
@@ -77,7 +77,7 @@ Statyczna biblioteka OpenVRML.
 
 %package gl
 Summary:	OpenGL renderer for OpenVRML
-Summary(pl.UTF-8):   Renderer OpenGL dla OpenVRML
+Summary(pl.UTF-8):	Renderer OpenGL dla OpenVRML
 Group:		X11/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	X11-OpenGL-libs >= 1:6.7
@@ -90,7 +90,7 @@ Renderer OpenGL dla OpenVRML.
 
 %package gl-devel
 Summary:	Header files for OpenVRML OpenGL renderer
-Summary(pl.UTF-8):   Pliki nagłówkowe dla renderera OpenGL dla OpenVRML
+Summary(pl.UTF-8):	Pliki nagłówkowe dla renderera OpenGL dla OpenVRML
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Requires:	%{name}-gl = %{version}-%{release}
@@ -106,7 +106,7 @@ przy użyciu renderera OpenGL dla OpenVRML.
 
 %package gl-static
 Summary:	Static OpenVRML OpenGL renderer library
-Summary(pl.UTF-8):   Statyczna biblioteka renderera OpenGL dla OpenVRML
+Summary(pl.UTF-8):	Statyczna biblioteka renderera OpenGL dla OpenVRML
 Group:		Development/Libraries
 Requires:	%{name}-gl-devel = %{version}-%{release}
 
@@ -118,7 +118,7 @@ Statyczna biblioteka renderera OpenGL dla OpenVRML.
 
 %package -n lookat
 Summary:	VRML viewer
-Summary(pl.UTF-8):   Przeglądarka VRML
+Summary(pl.UTF-8):	Przeglądarka VRML
 Group:		Applications/Multimedia
 Requires:	%{name}-gl = %{version}-%{release}
 #Requires:	mozilla = %(rpm -q mozilla --qf='%%{epoch}:%%{version}')
@@ -132,7 +132,7 @@ Przeglądarka VRML oparta na SDL.
 
 %package -n mozilla-plugin-%{name}
 Summary:	VRML plugin for Mozilla WWW browser
-Summary(pl.UTF-8):   Wtyczka VRML dla przeglądarki WWW Mozilla
+Summary(pl.UTF-8):	Wtyczka VRML dla przeglądarki WWW Mozilla
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	mozilla-embedded(gtk2)
@@ -145,7 +145,7 @@ Wtyczka VRML dla przeglądarki WWW Mozilla.
 
 %package -n netscape-plugin-%{name}
 Summary:	VRML plugin for Netscape WWW browser
-Summary(pl.UTF-8):   Wtyczka VRML dla przeglądarki WWW Netscape
+Summary(pl.UTF-8):	Wtyczka VRML dla przeglądarki WWW Netscape
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -157,7 +157,7 @@ Wtyczka VRML dla przeglądarki WWW Netscape.
 
 %package -n mozilla-firefox-plugin-%{name}
 Summary:	VRML plugin for Mozilla Firefox browser
-Summary(pl.UTF-8):   Wtyczka VRML dla przeglądarki Mozilla Firefox
+Summary(pl.UTF-8):	Wtyczka VRML dla przeglądarki Mozilla Firefox
 Group:		Libraries
 PreReq:		mozilla-firefox
 Requires:	%{name} = %{version}-%{release}
@@ -170,7 +170,7 @@ Wtyczka VRML dla przeglądarki Mozilla Firefox.
 
 %package -n konqueror-plugin-%{name}
 Summary:	VRML plugin for Konqueror browser
-Summary(pl.UTF-8):   Wtyczka VRML dla przeglądarki Konqueror
+Summary(pl.UTF-8):	Wtyczka VRML dla przeglądarki Konqueror
 Group:		Libraries
 PreReq:		konqueror >= 3.0.8-2.3
 Requires:	%{name} = %{version}-%{release}
