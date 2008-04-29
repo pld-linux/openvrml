@@ -14,9 +14,7 @@ Source0:	http://dl.sourceforge.net/openvrml/%{name}-%{version}.tar.gz
 URL:		http://www.openvrml.org/
 BuildRequires:	SDL-devel >= 1.2
 BuildRequires:	X11-devel >= 1:6.7
-BuildRequires:	boost-conversion-devel >= 1.30.2
-BuildRequires:	boost-spirit-devel >= 1.30.2
-BuildRequires:	boost-test-devel >= 1.30.2
+BuildRequires:	boost-devel >= 1.35.0
 BuildRequires:	dejagnu >= 1.4
 BuildRequires:	fontconfig-devel >= 2.0
 BuildRequires:	freetype-devel >= 2.1.2
